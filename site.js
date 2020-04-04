@@ -1,16 +1,3 @@
-function fileExists(dir, successCallback, errorCallback) {
-    var xhttp = new XMLHttpRequest;
-
-    /* Check the status code of the request */
-    xhttp.onreadystatechange = function() {
-        return (xhttp.status !== 404) ? successCallback : errorCallback;
-    };
-
-    /* Open and send the request */
-    xhttp.open('head', dir, false);
-    xhttp.send();
-};
-
 function extractUrlParams(){	
 	var t = location.search.substring(1).split('&');
 	var f = [];
@@ -22,17 +9,9 @@ function extractUrlParams(){
 }
 
 
-function urlExists(testUrl) {
-    var http = jQuery.ajax({
-        type:"HEAD", //Not get
-        url: testUrl,
-        async: false
-    })
-    return http.status!=404;
-}
-
 var url_images="";
-var url_website="https://cippil.fr/unlock/";
+var url_website="https://unlock.cippil.fr/";
+var list_images=[]
 
 //////////////////////////////////////////////////////////////////////////////////
 //Cards 
@@ -43,6 +22,7 @@ function hide_card(id){
 }
 
 function add_card(id){
+	id=id.toLowerCase()
 	//remove card if exist 
 	
 	try {
@@ -53,7 +33,7 @@ function add_card(id){
 	}
 	
 	
-	if(urlExists(url_website+"/"+url_images+"/" + id + ".png")){
+	if(list_images.includes(id)){
 		var card="<table id=\"" + id + "_card\" style=\"display:inline\">";
 		card+="<tr><td><img src=\"" + url_images + "/" + id + ".png\"></td></tr>";
 		card+="<tr><td><a onclick=\"hide_card('" + id + "');\">Ranger</a></td></tr></table>";
@@ -87,12 +67,15 @@ function select_aventure(aventure){
 	url_images = aventure;
 	
 	if(aventure=="02_la_5_eme_avenue"){
+		
+		list_images=["5","8","11","15","22","25","30","37","42","43","44","52","58","66","73","86","88","92","c","f","g","h","r","v","w","welcome1","welcome2","welcome3","welcome4"];
 		add_card("welcome1");
 		add_card("welcome2");
 		add_card("welcome3");
 		add_card("welcome4");
 	}
 	if(aventure=="01_tuto"){
+		list_images=["11","16","21","25","35","42","46","48","69","welcome","welcome1"];
 		add_card("welcome");
 		add_card("welcome1");
 	}
