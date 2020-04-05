@@ -66,37 +66,44 @@ function select_aventure(aventure){
 	//global url_images;
 	url_images = aventure;
 	if(aventure=="05_a_la_poursuite_de_cabrakan"){
-		list_images=["welcome1","welcome2","welcome3","6","10","12","15","18","20","24","26","30","35","38","43","46","54","59","60","75","85","95"];
+		list_images=["application_demo","welcome1","welcome2","welcome3","6","10","12","15","18","20","24","26","30","35","38","43","46","54","59","60","75","85","95"];
 		add_card("welcome1");
 		add_card("welcome2");
+		add_card("application_demo");
 		add_card("welcome3");
 	}
 	if(aventure=="04_L_elite"){
-		list_images=["welcome1","welcome2","4","15","21","22","32","35","42","47","50","60","63","67","73","79","80","85","c","k","m"];
+		list_images=["application_demo","welcome1","welcome2","4","15","21","22","32","35","42","47","50","60","63","67","73","79","80","85","c","k","m"];
 		add_card("welcome1");
+		add_card("application_demo");
 		add_card("welcome2");
 	}
 	if(aventure=="03_le_donjon_de_doo_arann"){
 		
-		list_images=["18","21","22","24","29","31","39","43","46","48","50","60","64","68","73","78","82","84","88","92","94","welcome","welcome2","welcome3","welcome4","welcome5"];
+		list_images=["application_demo","18","21","22","24","29","31","39","43","46","48","50","60","64","68","73","78","82","84","88","92","94","welcome","welcome2","welcome3","welcome4","welcome5"];
 		add_card("welcome");
 		add_card("welcome2");
 		//add_card("welcome3");
 		//add_card("welcome4");
+		add_card("application_demo");
 		add_card("welcome5");
 	}
 	
 	if(aventure=="02_la_5_eme_avenue"){
 		
-		list_images=["5","8","11","15","22","25","30","37","42","43","44","52","58","66","73","86","88","92","c","f","g","h","r","v","w","welcome1","welcome2","welcome3","welcome4"];
+		list_images=["application_demo", "5","8","11","15","22","25","30","37","42","43","44","52","58","66","73","86","88","92","c","f","g","h","r","v","w","welcome1","welcome2","welcome3","welcome4"];
 		add_card("welcome1");
 		add_card("welcome2");
 		add_card("welcome3");
+
+		add_card("application_demo");
 		add_card("welcome4");
 	}
 	if(aventure=="01_tuto"){
-		list_images=["11","16","21","25","35","42","46","48","69","welcome","welcome1"];
+		list_images=["11","16","21","25","35","42","46","48","69","welcome","welcome1","application_tuto"];
+		
 		add_card("welcome");
+		add_card("application_tuto");
 		add_card("welcome1");
 	}
 	
